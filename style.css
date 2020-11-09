@@ -11,4 +11,167 @@
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
+    background-color: #ebebeb;
+}
+
+/* === Estilização Geral === */
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel__container {
+    width: 800px;
+    height: 500px;
+    background: #2b2b2b;
+    position: relative;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel__btn {
+    position: absolute;
+    cursor: pointer;
+    font-size: 28px;
+    color: #bdbdbd;
+    transition: ease 0.2s;
+}
+
+.carousel__btn:hover {
+    color: #ebebeb;
+}
+
+.carousel__btn--prev {
+    top: 50%;
+    left: 2%;
+}
+
+.carousel__btn--next {
+    top: 50%;
+    right: 2%;
+}
+
+.card__container {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 55%;
+    height: 100%;
+    background: #ffd9d9;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card__img--container {
+    height: 40%;
+    width: 90%;
+    margin-top: 20px;
+    justify-self: center;
+    align-self: center;
+    border: 1px solid #1f1919;
+}
+
+.card__img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.card__title {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.card__description {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.card__button {
+    padding: 10px 40px;
+    margin: 20px auto;    
+    background: #262626;
+    border-radius: 25px;
+    color: #ffd9d9;
+    cursor: pointer;
+    transition: ease 0.2s;
+}
+
+.card__button:hover {
+    background: #0f0f0f;
+}
+
+/* === Responsividade === */
+@media(max-width: 900px) {
+    .carousel__container {
+        width: 600px;
+        height: 500px;        
+    }    
+
+    .card {
+        width: 60%;
+    }
+
+    .card__img--container {
+        height: 30%;
+        width: 80%;
+    }
+
+}
+
+@media(max-width: 600px) {
+    .carousel__container {
+        width: 400px;
+        height: 500px;        
+    }   
+    
+    .carousel__btn {
+        font-size: 24px;
+    }
+
+    .card {
+        width: 80%;
+    }
+
+    .card__img--container {
+        height: 25%;
+        width: 80%;
+    }
+
+    .card__description {
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 400px) {
+    .carousel__container {
+        width: 300px;
+        height: 400px;        
+    }   
+    
+    .card {
+        height: 90%;
+    }
+
+    .card__img--container {
+        height: 25%;
+        width: 75%;
+    }
+
+    .card__btn {
+        padding: 5px 20px;     
+        font-size: 14px;   
+    }
 }
