@@ -3,6 +3,7 @@ var btnPrev = document.getElementById('carousel__btn--prev');
 var btnNext = document.getElementById('carousel__btn--next');
 const slides = document.getElementsByClassName('card');
 const totalSlides = slides.length;
+const dot = document.getElementsByClassName('dot');
 
 //Eventos
 btnNext.addEventListener('click', moveNextSlide);
@@ -15,8 +16,19 @@ function updateSlidePosition() {
         slide.classList.add('card--hidden');
     } 
 
-    slides[slidePosition].classList.add('card--visible');    
+
+    slides[slidePosition].classList.add('card--visible');        
 }
+
+function updateDot() {
+    for (var ponto of dot) {
+        ponto.classList.remove('dot-active');
+    }
+
+    dot[slidePosition].classList.add('dot-active');
+}
+
+
 
 
 
@@ -28,7 +40,9 @@ function moveNextSlide() {
         slidePosition ++;
     }
 
+    updateDot();
     updateSlidePosition();
+    
 }
 
 // Mover ao Slide anterior
@@ -39,7 +53,9 @@ function movePrevSlide() {
         slidePosition --;
     }
 
+    updateDot();
     updateSlidePosition();
+    
 
 }
 

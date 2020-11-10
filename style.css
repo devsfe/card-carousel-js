@@ -21,6 +21,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column  ;
 }
 
 .carousel__container {
@@ -130,6 +131,26 @@ body {
     background: #0f0f0f;
 }
 
+.dots__container {
+    display: flex;
+    justify-content: center;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    border-radius: 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    background-color: white;
+}
+
+
+
+
+.dot-active {
+    background-color: #c2c2c2;
+}
 
 @keyframes fade{
     0% {
