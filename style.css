@@ -11,7 +11,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
-    background-color: #ebebeb;
+    background-color: #141414;
 }
 
 /* === Estilização Geral === */
@@ -26,7 +26,6 @@ body {
 .carousel__container {
     width: 800px;
     height: 500px;
-    background: #2b2b2b;
     position: relative;
     border-radius: 10px;
     display: flex;
@@ -46,12 +45,12 @@ body {
     color: #ebebeb;
 }
 
-.carousel__btn--prev {
+#carousel__btn--prev {
     top: 50%;
     left: 2%;
 }
 
-.carousel__btn--next {
+#carousel__btn--next {
     top: 50%;
     right: 2%;
 }
@@ -67,19 +66,32 @@ body {
 .card {
     width: 55%;
     height: 100%;
-    background: #ffd9d9;
+    background: #ffffff;
     border-radius: 10px;
-    display: flex;
     flex-direction: column;
+    box-shadow: 0px 0px 5px 1px rgba(120,172,255,0.32);
 }
 
-.card__img--container {
+.card__container .card,
+.card__container .card--hidden {
+    display: none;
+}
+
+.card__container .card--visible {
+    display: flex;
+    animation: fade 0.4s ease;
+}
+
+
+
+.card__img--container { 
     height: 40%;
     width: 90%;
     margin-top: 20px;
     justify-self: center;
     align-self: center;
-    border: 1px solid #1f1919;
+    border: 1px solid #c78b87;
+    transition: ease 0.2s;
 }
 
 .card__img {
@@ -87,6 +99,11 @@ body {
     height: 100%;
     object-fit: cover;
     object-position: center center;
+    cursor: pointer;
+}
+
+.card__img--container:hover {
+    transform: scale(1.02);
 }
 
 .card__title {
@@ -100,7 +117,7 @@ body {
 }
 
 .card__button {
-    padding: 10px 40px;
+    padding: 5px 35px;
     margin: 20px auto;    
     background: #262626;
     border-radius: 25px;
@@ -112,6 +129,23 @@ body {
 .card__button:hover {
     background: #0f0f0f;
 }
+
+
+@keyframes fade{
+    0% {
+        opacity: 0; 
+    }
+    50% {
+        opacity: 0.5; 
+    }
+    100% {
+        opacity: 1;
+        transform: opacity linear;
+    }
+}
+
+
+
 
 /* === Responsividade === */
 @media(max-width: 900px) {
@@ -128,7 +162,6 @@ body {
         height: 30%;
         width: 80%;
     }
-
 }
 
 @media(max-width: 600px) {
