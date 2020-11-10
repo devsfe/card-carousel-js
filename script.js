@@ -10,16 +10,18 @@ btnNext.addEventListener('click', moveNextSlide);
 btnPrev.addEventListener('click', movePrevSlide);
 
 
+//Atualizar posição do Slide
 function updateSlidePosition() {
     for (var slide of slides) {
         slide.classList.remove('card--visible');
         slide.classList.add('card--hidden');
     } 
 
-
     slides[slidePosition].classList.add('card--visible');        
 }
 
+
+//Atualizar função dos pontos
 function updateDot() {
     for (var ponto of dot) {
         ponto.classList.remove('dot-active');
@@ -27,8 +29,6 @@ function updateDot() {
 
     dot[slidePosition].classList.add('dot-active');
 }
-
-
 
 
 
@@ -55,7 +55,6 @@ function movePrevSlide() {
 
     updateDot();
     updateSlidePosition();
-    
 
 }
 
