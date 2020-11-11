@@ -11,7 +11,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
-    background-color: #141414;
+    background-color: #3492eb;
 }
 
 /* === Estilização Geral === */
@@ -21,7 +21,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column  ;
+    flex-direction: column;
 }
 
 .carousel__container {
@@ -37,9 +37,10 @@ body {
 .carousel__btn {
     position: absolute;
     cursor: pointer;
-    font-size: 28px;
+    font-size: 1.75rem;
     color: #bdbdbd;
     transition: ease 0.2s;
+    top: 50%;
 }
 
 .carousel__btn:hover {
@@ -47,12 +48,10 @@ body {
 }
 
 #carousel__btn--prev {
-    top: 50%;
     left: 2%;
 }
 
 #carousel__btn--next {
-    top: 50%;
     right: 2%;
 }
 
@@ -72,13 +71,11 @@ body {
     border: 1px solid rgba(120,172,255,0.32); 
     flex-direction: column;
     box-shadow: 0px 0px 5px 1px rgba(120,172,255,0.32);
-    transition: ease 0.8s;
+    transition: ease 0.3s;
 } 
 
 .card:hover {
-    position: relative; 
-    top: -5px;
-    transition: ease 0.2s;
+    transform: translate(0, -8px);
 }
 
 
@@ -95,10 +92,9 @@ body {
 .card__img--container { 
     height: 40%;
     width: 90%;
-    margin-top: 20px;
+    margin-top: 1.25em;
     justify-self: center;
     align-self: center;
-    border: 1px solid #c78b87;
     transition: ease 0.2s;
 }
 
@@ -111,18 +107,21 @@ body {
 }
 
 .card__title {
-    margin-top: 20px;
+    margin-top: 1.25em;
     text-align: center;
+    font-size: 1.125rem;
 }
 
 .card__description {
+    width: 70%;
+    margin: 1.25em auto 0 auto;
+    font-size: 0.875rem;
     text-align: center;
-    margin-top: 20px;
 }
 
 .card__button {
-    padding: 5px 35px;
-    margin: 20px auto;    
+    padding: 5px 40px;
+    margin: 1.25em auto;    
     background: #262626;
     border-radius: 25px;
     color: #ffd9d9;
@@ -143,21 +142,31 @@ body {
     height: 15px;
     width: 15px;
     border-radius: 20px;
-    margin: 0 5px;
+    margin: 0 0.313em;
     cursor: pointer;
-    background-color: white;
+    background-color: #c2c2c2;
 }
 
 .dot-active {
-    background-color: #c2c2c2;
+    background-color: white;
+}
+
+.copy {
+    position: absolute;
+    top: 90%;
+    left: 70%;
+    font-size: 0.875rem;
+    color: #d1d1d1;
+}
+
+.github-icon,
+.github-link     {
+    color: #272a2e;
 }
 
 @keyframes fade{
     0% {
         opacity: 0; 
-    }
-    50% {
-        opacity: 0.5; 
     }
     100% {
         opacity: 1;
@@ -169,6 +178,15 @@ body {
 
 
 /* === Responsividade === */
+@media(max-width: 1100px) {
+    .copy {
+        top: 100%;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }    
+}
+
 @media(max-width: 900px) {
     .carousel__container {
         width: 600px;
@@ -192,7 +210,7 @@ body {
     }   
     
     .carousel__btn {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
 
     .card {
@@ -205,18 +223,20 @@ body {
     }
 
     .card__description {
-        font-size: 14px;
+        font-size: 0.875rem;
     }
 }
 
 @media(max-width: 400px) {
     .carousel__container {
         width: 300px;
-        height: 400px;        
+        height: 600px;    
+   
     }   
     
     .card {
         height: 90%;
+        width: 100%;
     }
 
     .card__img--container {
@@ -226,6 +246,14 @@ body {
 
     .card__btn {
         padding: 5px 20px;     
-        font-size: 14px;   
+        font-size: 0.875rem;   
+    }
+
+    #carousel__btn--prev {
+        left: 0;
+    }
+    
+    #carousel__btn--next {
+        right: 0;
     }
 }

@@ -31,7 +31,6 @@ function updateDot() {
 }
 
 
-
 // Mover ao próximo Slide
 function moveNextSlide() { 
     if (slidePosition == totalSlides -1) { 
@@ -55,7 +54,6 @@ function movePrevSlide() {
 
     updateDot();
     updateSlidePosition();
-
 }
 
 
